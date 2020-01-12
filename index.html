@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script type="text/javascript" src="./scripts/data.json"></script>
+    <title>Clone</title>
+</head>
+
+<body onload="alluser();">
+    <div class="heading">
+        <h1>Clone</h1>
+    </div>
+
+    <div id="users">
+    </div>
+
+
+    <!-- <div id="users" onclick="setId(1)">
+        <div class="image">
+            <div class="profile-pic">
+                <img src="./images/profile-pics/ankush.jpeg" alt="ankush">
+            </div>
+            <div class="profile-text">
+                <a href="users.html">Ankush Dharkar
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <form action="users.html" method="get">
+        <input type="number" name="id" value="1">
+
+        <input type="submit" value="Submit">
+    </form> -->
+
+
+    <script>
+        function setId(id) {
+            sessionStorage.setItem("ID", id);
+        }
+    </script>
+
+
+
+    <script>
+        var userdom = "";
+        var userdata = JSON.parse(data);
+
+        function alluser() {
+            for (var i = 0; i < userdata.length; i++) {
+                /*   userdom += "<a href=" + userdata[i].linkedin + ">";
+                  userdom += " <div class=\"image\"><div class=\"profile-pic\">";
+                  userdom += "<img src=" + userdata[i].profile + " alt=" + userdata[i].name + "></div><div class=\"profile-text\">" + userdata[i].name;
+                  userdom += " </div></div></a>"; */
+
+                userdom += "<div id=\"users\" onclick=\"setId(" + userdata[i].id + ")\">";
+                userdom += "<div class=\"image\"><div class=\"profile-pic\">";
+                userdom += "<img src=" + userdata[i].profile + " alt=" + userdata[i].name + "></div><div class=\"profile-text\"><a href=\"users.html\">" + userdata[i].name;
+                userdom += "</a> </div></div></div>";
+
+                /*                      <div id="users" onclick="setId(1)">
+                             <div class="image">
+                                 <div class="profile-pic">
+                                     <img src="./images/profile-pics/ankush.jpeg" alt="ankush">
+                                 </div>
+                                 <div class="profile-text">
+                                     <a href="users.html">Ankush Dharkar
+                                     </a>
+                                 </div>
+                             </div>
+                         </div> */
+
+
+            }
+            document.getElementById("users").innerHTML = userdom;
+        }
+    </script>
+
+
+</body>
+
+</html>

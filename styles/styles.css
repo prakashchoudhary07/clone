@@ -1,0 +1,42 @@
+.heading {
+    font-size: 30px;
+    text-align: center;
+}
+
+.image {
+    padding: 10px;
+    border-radius: 12px;
+    width: max-content;
+    height: auto;
+    text-align: left;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    margin: 10px 10px;
+    float: left;
+}
+
+.profile-text {
+    margin-left: 250px;
+    padding-top: 75px;
+    padding-left: 20px;
+    height: 200px;
+    font-size: 40px;
+}
+
+img {
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+
+p {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a:hover {
+    cursor: grabbing;
+}

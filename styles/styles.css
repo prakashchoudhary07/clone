@@ -1,5 +1,15 @@
+* {
+    margin: 0 px;
+    padding: 0 px;
+    box-sizing: 0 px;
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
 .heading {
-    font-size: 30px;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -23,11 +33,12 @@
     padding-top: 75px;
     padding-left: 20px;
     height: 200px;
-    font-size: 40px;
+    font-size: 2.5rem;
+    text-transform: capitalize;
 }
 
 img {
-    border: 2px solid grey;
+    border: 1.5px solid grey;
     border-radius: 50%;
 }
 
@@ -44,7 +55,7 @@ a {
 
 a:hover {
     color: blue;
-    cursor: grabbing;
+    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -56,4 +67,15 @@ a:hover {
 
 .nolink::before {
     content: "HELLO";
+}
+
+.yellow-square {
+    background-color: #FFDC00;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.users {
+    margin: 0 35%;
 }

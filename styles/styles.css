@@ -37,6 +37,23 @@ p {
     padding-bottom: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 a:hover {
+    color: blue;
     cursor: grabbing;
+    text-decoration: underline;
+}
+
+.nolink {
+    text-align: center;
+    color: gray;
+    font-size: 3rem;
+}
+
+.nolink::before {
+    content: "HELLO";
 }

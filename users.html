@@ -34,10 +34,10 @@
 
     <script>
         var id = sessionStorage.getItem("ID");
-        console.log(id);
+        // console.log(id);
         var userdom = "";
         var userdata = JSON.parse(data);
-        console.log(userdata[id]);
+        // console.log(userdata[id]);
         userdom += "<div id=\"users\">";
         userdom += "<div class=\"image\"><div class=\"profile-pic\" style=\"vertical-align: middle;\">";
         userdom += "<img src=" + userdata[id].profile + " alt=" + userdata[id].name + "></div><div class=\"profile-text\"> Name: " + userdata[id].name;
@@ -45,8 +45,24 @@
         userdom += "<br>City: " + userdata[id].area;
         userdom += "<br><p> Bio: " + userdata[id].bio + "</p>";
         userdom += "College: " + userdata[id].college;
-        userdom += "<br><a href=\"" + userdata[id].linkedin + "\">Linkedin</a>";
-        userdom += "<br><a href=\"" + userdata[id].twitter + "\">Twitter</a>";
+        if (userdata[id].linkedin !== "") {
+            userdom += "<br><a href=\"" + userdata[id].linkedin + "\">Linkedin</a>";
+        } else {
+            userdom += "<br><a href=\"nolink.html\">Linkedin</a>";
+
+        }
+        if (userdata[id].twitter !== "") {
+            userdom += "<br><a href=\"" + userdata[id].twitter + "\">Twitter</a>";
+        } else {
+            userdom += "<br><a href=\"nolink.html\">Twitter</a>";
+
+        }
+        if (userdata[id].github !== "") {
+            userdom += "<br><a href=\"" + userdata[id].github + "\">Github</a>";
+        } else {
+            userdom += "<br><a href=\"nolink.html\">Github</a>";
+
+        }
         userdom += "</div></div></div>";
         document.getElementById("user").innerHTML = userdom;
     </script>

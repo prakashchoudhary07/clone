@@ -79,3 +79,19 @@ a:hover {
 .users {
     margin: 0 35%;
 }
+
+.userFriends {
+    display: inline-flex;
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 80vh;
+}
+
+.friendssection {
+    padding: 10px;
+    margin: 20px;
+    background: aliceblue;
+    border: 5px solid black;
+    border-radius: 10px;
+}

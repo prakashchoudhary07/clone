@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
-    <script type="text/javascript" src="./scripts/data.json"></script>
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <script type="text/javascript" src="./scripts/userscript.js"></script>
 
     <title>User</title>
 </head>
@@ -15,65 +16,18 @@
     <div class="heading">
         <h1>Clone</h1>
     </div>
-
-    <div id="user" class="user">
-    </div>
-
-
-    <!-- <div id="users" onclick="setId(1)">
-        <div class="image">
-            <div class="profile-pic">
-                <img src="./images/profile-pics/ankush.jpeg" alt="ankush">
-            </div>
-            <div class="profile-text">
-                <a href="users.html">Ankush Dharkar
-                </a>
-            </div>
+    <section>
+        <div id="user" class="user">
         </div>
-    </div> -->
+    </section>
 
+    <section class="userFriends" id="userFriends">
+    </section>
     <script>
-        var id = sessionStorage.getItem("ID");
-        // console.log(id);
-        var userdom = "";
-        var userdata = JSON.parse(data);
-        // console.log(userdata[id]);
-        userdom += "<div class=\"image\"><div class=\"profile-pic\" style=\"vertical-align: middle;\">";
-        userdom += "<img src=" + userdata[id].profile + " alt=" + userdata[id].name + "></div><div class=\"profile-text\"> Name: " + userdata[id].name.toLowerCase();
-        userdom += "<br>Company: " + userdata[id].company;
-        userdom += "<br>City: " + userdata[id].area;
-        userdom += "<br><p> Bio: " + userdata[id].bio + "</p>";
-        userdom += "College: " + userdata[id].college;
-        if (userdata[id].linkedin !== "") {
-            userdom += "<br><a href=\"" + userdata[id].linkedin + "\">Linkedin</a>";
-        } else {
-            userdom += "<br><a href=\"nolink.html\">Linkedin</a>";
-
-        }
-        if (userdata[id].twitter !== "") {
-            userdom += "<br><a href=\"" + userdata[id].twitter + "\">Twitter</a>";
-        } else {
-            userdom += "<br><a href=\"nolink.html\">Twitter</a>";
-
-        }
-        if (userdata[id].github !== "") {
-            userdom += "<br><a href=\"" + userdata[id].github + "\">Github</a>";
-        } else {
-            userdom += "<br><a href=\"nolink.html\">Github</a>";
-
-        }
-        userdom += "</div></div>";
-        document.getElementById("user").innerHTML = userdom;
+        getUser();
+        getFriends();
     </script>
 
-
-
-    <!-- <script>
-        var url = window.location.href;
-        console.log(url);
-        var ss = window.location.search;
-        console.log(ss);
-    </script> -->
 </body>
 
 </html>
